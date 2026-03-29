@@ -787,8 +787,12 @@ section { padding: 110px 60px; position: relative; }
   .navbar.scrolled, .navbar.solid { padding: 12px 20px; }
   .nav-links, .nav-cta { display: none; }
   .mobile-toggle { display: flex; flex-direction: column; justify-content: center; z-index: 1001; }
-  .hero-trust-strip { flex-wrap: wrap !important; gap: 8px !important; padding: 0 10px; }
-  .hero-buttons { flex-wrap: wrap; justify-content: center; }
+  .hero-trust-strip { display: none !important; }
+  .hero-badge { font-size: 0.65rem !important; padding: 8px 20px !important; margin-bottom: 12px !important; }
+  .hero h1 { font-size: 1.75rem !important; line-height: 1.25 !important; margin-bottom: 12px !important; }
+  .hero p { font-size: 0.85rem !important; line-height: 1.6 !important; margin-bottom: 24px !important; padding: 0 10px; }
+  .hero-buttons { flex-wrap: wrap; justify-content: center; gap: 12px !important; }
+  .hero-buttons .btn-primary, .hero-buttons .btn-outline { padding: 12px 28px !important; font-size: 0.8rem !important; }
   section { overflow-x: hidden; }
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
