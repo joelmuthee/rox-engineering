@@ -29,6 +29,18 @@ a { text-decoration: none; color: inherit; }
   --border-light: #F0EEE9;
 }
 
+/* ===== CLICKABLE CONTACT LINKS ===== */
+a[href^="tel"], a[href^="mailto"] {
+  text-decoration: underline;
+  text-decoration-color: rgba(212,160,18,0.35);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.3s ease;
+}
+a[href^="tel"]:hover, a[href^="mailto"]:hover {
+  text-decoration-color: var(--gold);
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(50px); }
