@@ -330,6 +330,7 @@ section { padding: 110px 60px; position: relative; }
   font-family: 'Poppins', sans-serif;
   font-size: 2.4rem; font-weight: 700; color: var(--gold-dark);
   margin-bottom: 4px;
+  min-width: 4ch; display: inline-block;
 }
 .stat-label {
   font-size: 0.75rem; text-transform: uppercase;
@@ -393,23 +394,23 @@ section { padding: 110px 60px; position: relative; }
   width: 66px; height: 66px; margin-bottom: 26px;
   background: linear-gradient(135deg, rgba(212,160,18,0.08), rgba(212,160,18,0.15));
   border-radius: 14px; display: flex; align-items: center; justify-content: center;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease; margin-inline: auto;
 }
 .service-card:hover .service-icon { animation: float 3s ease-in-out infinite; }
 .service-icon svg { width: 30px; height: 30px; stroke: var(--gold-dark); fill: none; stroke-width: 1.5; }
 .service-card h3 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.3rem; margin-bottom: 14px; line-height: 1.3;
-  color: var(--navy);
+  color: var(--navy); text-align: center;
 }
 .service-card p {
   color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;
-  margin-bottom: 22px;
+  margin-bottom: 22px; text-align: center;
 }
-.service-list { list-style: none; }
+.service-list { list-style: none; display: inline-block; text-align: left; }
 .service-list li {
   padding: 5px 0; color: var(--text-body); font-size: 0.83rem;
-  display: flex; align-items: flex-start; gap: 10px;
+  display: flex; align-items: flex-start; gap: 10px; text-align: left;
 }
 .service-list li::before {
   content: ''; flex-shrink: 0; width: 5px; height: 5px;
@@ -769,8 +770,10 @@ section { padding: 110px 60px; position: relative; }
   .page-header { padding: 140px 30px 60px; }
 }
 @media (max-width: 768px) {
+  .navbar { padding: 14px 20px; }
+  .navbar.scrolled, .navbar.solid { padding: 12px 20px; }
   .nav-links, .nav-cta { display: none; }
-  .mobile-toggle { display: block; }
+  .mobile-toggle { display: flex; flex-direction: column; justify-content: center; z-index: 1001; }
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
