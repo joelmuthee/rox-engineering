@@ -442,7 +442,7 @@ section { padding: 110px 60px; position: relative; }
 .why-card p { color: var(--text-muted); font-size: 0.84rem; line-height: 1.7; }
 
 /* ===== PROJECTS GALLERY (Oville-style) ===== */
-.gallery { background: var(--off-white); }
+.gallery { background: var(--off-white); padding: 60px 40px; }
 .gallery-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 20px; max-width: 1300px; margin: 0 auto;
