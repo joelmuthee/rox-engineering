@@ -783,7 +783,8 @@ section { padding: 110px 60px; position: relative; }
   .mobile-toggle { display: block; }
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .gallery-item { height: 180px; }
   
   
   .hero { padding-left: 16px; padding-right: 16px; }
