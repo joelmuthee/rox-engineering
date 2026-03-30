@@ -408,7 +408,7 @@ section { padding: 110px 60px; position: relative; }
   color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;
   margin-bottom: 22px;
 }
-.service-list { list-style: none; }
+.service-list { list-style: none; text-align: left; }
 .service-list li {
   padding: 5px 0; color: var(--text-body); font-size: 0.83rem;
   display: flex; align-items: flex-start; gap: 10px;
