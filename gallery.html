@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,6 +28,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+.project-hidden { display: none !important; }
+.gallery-grid.projects-expanded .project-hidden { display: block !important; }
+#see-more-projects:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,160,18,0.3); }
+</style>
 </head>
 <body>
 
@@ -109,66 +114,69 @@
       <div class="gallery-overlay"><h5>Construction Supervision</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/earthworks_environmental_engineering_roxengineering-scaled.jpg" alt="Earthworks and Environmental" loading="lazy">
       <div class="gallery-overlay"><h5>Earthworks &amp; Environmental</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/Energy_Sector_www.roxengineering.co_.ke_.jpg" alt="Energy Sector Projects" loading="lazy">
       <div class="gallery-overlay"><h5>Energy Sector Projects</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/Manufacturing_Sector_www.roxengineering.co_.ke_-400x284.jpg" alt="Manufacturing Sector" loading="lazy">
       <div class="gallery-overlay"><h5>Manufacturing Sector</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/water_retaining_structures_design_supervision_roxengineering.jpg" alt="Water Retaining Structures" loading="lazy">
       <div class="gallery-overlay"><h5>Water Retaining Structures</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/maisonettes_construction_and_supervison-scaled.jpg" alt="Maisonettes Development" loading="lazy">
       <div class="gallery-overlay"><h5>Maisonettes Development</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/greenhouse_construction_roxengineering.jpg" alt="Greenhouse Construction" loading="lazy">
       <div class="gallery-overlay"><h5>Greenhouse Construction</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/20241115_121319-min-scaled.webp" alt="Site Inspection" loading="lazy">
       <div class="gallery-overlay"><h5>Site Inspection &amp; Quality Control</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/rigid_pavements_construction_roxengineering.jpg" alt="Rigid Pavements" loading="lazy">
       <div class="gallery-overlay"><h5>Rigid Pavements</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/noise_monitoring_safety_roxeingineering.jpg" alt="Safety and Noise Monitoring" loading="lazy">
       <div class="gallery-overlay"><h5>Safety &amp; Noise Monitoring</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/precast_slabs_construction_roxengineering.jpg" alt="Precast Slabs" loading="lazy">
       <div class="gallery-overlay"><h5>Precast Slabs Construction</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/DSC0184-min-scaled.webp" alt="Foundation Works" loading="lazy">
       <div class="gallery-overlay"><h5>Foundation Works</h5></div>
     </div>
 
-    <div class="gallery-item reveal">
+    <div class="gallery-item reveal project-hidden">
       <img src="images/projects/MHR_0207-min-scaled.webp" alt="Building Construction" loading="lazy">
       <div class="gallery-overlay"><h5>Building Construction</h5></div>
     </div>
 
+  </div>
+  <div style="text-align: center; padding: 20px 0 40px;">
+    <button id="see-more-projects" onclick="toggleProjects()" style="display:inline-block;padding:14px 40px;background:var(--navy);color:var(--gold);border:2px solid var(--gold);border-radius:8px;font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;letter-spacing:0.5px;">See More Projects</button>
   </div>
 </section>
 
@@ -382,5 +390,25 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
     <span>Chat with Us</span>
   </a>
 </div>
+<script>
+function toggleProjects() {
+  var grid = document.querySelector('.gallery-grid');
+  var btn = document.getElementById('see-more-projects');
+  if (grid.classList.contains('projects-expanded')) {
+    grid.classList.remove('projects-expanded');
+    btn.textContent = 'See More Projects';
+    // Scroll back to gallery section
+    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+  } else {
+    grid.classList.add('projects-expanded');
+    btn.textContent = 'Show Less';
+    // Re-observe newly visible items for reveal animation
+    document.querySelectorAll('.gallery-item.project-hidden').forEach(function(el) {
+      el.classList.remove('active');
+      setTimeout(function() { el.classList.add('active'); }, 100);
+    });
+  }
+}
+</script>
 </body>
 </html>
