@@ -817,4 +817,33 @@ section { padding: 110px 60px; position: relative; }
   .leader-grid img { max-width: 280px; margin: 0 auto; }
   .leader-grid h3, .leader-grid p { text-align: center; }
   .credentials-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+
+  /* Override left/right animations to fade-up only on mobile */
+  .reveal-left, .reveal-right { transform: translateY(30px) !important; }
+  .reveal-left.active, .reveal-right.active { transform: translateY(0) !important; }
 }
+
+/* Trust badges strip below hero - mobile only */
+.mobile-trust-strip {
+  display: none;
+  justify-content: center; gap: 8px;
+  padding: 14px 12px;
+  background: var(--navy);
+}
+.mobile-trust-strip .badge-pill {
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,160,18,0.2);
+  border-radius: 6px;
+  flex: 1; min-width: 0;
+}
+.mobile-trust-strip .badge-pill svg { flex-shrink: 0; }
+.mobile-trust-strip .badge-pill span {
+  color: rgba(255,255,255,0.8);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.52rem; font-weight: 600;
+  line-height: 1.3; letter-spacing: 0.2px;
+}
+@media (max-width: 768px) {
+  .mobile-trust-strip { display: flex; }
