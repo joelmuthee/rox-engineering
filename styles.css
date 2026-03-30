@@ -542,11 +542,11 @@ section { padding: 110px 60px; position: relative; }
 .clients { background: var(--white); padding: 100px 60px; }
 .clients-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 0; max-width: 1100px; margin: 40px auto 0; overflow: hidden;
+  gap: 16px; max-width: 1100px; margin: 40px auto 0; overflow: hidden;
 }
 .client-cell {
   display: flex; align-items: center; justify-content: center;
-  padding: 36px 28px; border: 1px solid var(--border-light);
+  padding: 36px 28px; border: 1px solid var(--border-light); border-radius: 10px;
   background: var(--white); transition: all 0.3s ease;
   min-height: 100px;
 }
