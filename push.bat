@@ -1,9 +1,6 @@
-@echo off
-cd /d "C:\Users\Joel\Website Designs\rox-engineering"
+cd /d C:\rox-push
 git add -A
-git commit -m "Initial commit - Rox Engineering website"
-git branch -M main
-git remote add origin https://github.com/joelmuthee/rox-engineering.git 2>nul
-git push -u origin main
-echo DONE
+git status
+git commit -m "Mobile fixes: WhatsApp widget, hero animation, stats, menu, padding, favicon, View Details alignment"
+git push origin main --force
 pause
