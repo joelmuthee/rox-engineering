@@ -1,4 +1,4 @@
-﻿/* ===== RESET & BASE ===== */
+/* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -136,7 +136,7 @@ img.loaded { animation: none; background: none; }
 
 /* Mobile nav overlay */
 .mobile-nav {
-  display: none; position: fixed; inset: 0; z-index: 999;
+  display: none; position: fixed; inset: 0; z-index: 1001;
   background: rgba(12,26,58,0.97); backdrop-filter: blur(20px);
   flex-direction: column; align-items: center; justify-content: center; gap: 32px;
 }
@@ -170,6 +170,27 @@ img.loaded { animation: none; background: none; }
 .page-header-sub {
   color: rgba(255,255,255,0.65); font-size: 1.05rem;
   max-width: 600px; margin: 0 auto; line-height: 1.8; position: relative;
+}
+
+/* ===== MOBILE TRUST BADGES (below hero) ===== */
+.mobile-trust-badges {
+  display: none;
+  justify-content: center; gap: 12px; flex-wrap: wrap;
+  padding: 20px 16px;
+  background: var(--navy);
+}
+.mobile-badge {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,160,18,0.25);
+  border-radius: 8px;
+}
+.mobile-badge span {
+  color: rgba(255,255,255,0.85);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.4px;
 }
 
 /* ===== HERO ===== */
@@ -330,6 +351,8 @@ section { padding: 110px 60px; position: relative; }
   font-family: 'Poppins', sans-serif;
   font-size: 2.4rem; font-weight: 700; color: var(--gold-dark);
   margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+  min-height: 1.2em;
 }
 .stat-label {
   font-size: 0.75rem; text-transform: uppercase;
@@ -776,8 +799,15 @@ section { padding: 110px 60px; position: relative; }
   .gallery-grid { grid-template-columns: 1fr; }
   
   
+  .hero { padding-left: 16px; padding-right: 16px; }
+  .hero-content { padding: 0 4px; }
   .hero h1 { font-size: 2rem; }
-  .about-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .hero-trust-strip { display: none !important; }
+  .mobile-trust-badges { display: flex; }
+  .about-stats { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 24px; }
+  .stat-box { padding: 12px 2px; border-radius: 8px; }
+  .stat-number { font-size: 1.2rem; margin-bottom: 2px; }
+  .stat-label { font-size: 0.5rem; letter-spacing: 0.3px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .vm-card { padding: 50px 30px; }
