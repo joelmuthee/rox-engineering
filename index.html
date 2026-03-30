@@ -329,7 +329,7 @@ revealEls.forEach(el => revealObs.observe(el));
 
 // Counter animation (bi-directional, ~2s duration)
 const counters = document.querySelectorAll('.stat-number[data-count]');
-counters.forEach(el => el._interval = null);
+counters.forEach(el => { el._interval = null; el.style.minWidth = (el.dataset.count.length + 1) + "ch"; el.style.display = "inline-block"; });
 const counterObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     const el = e.target, target = parseInt(el.dataset.count);
