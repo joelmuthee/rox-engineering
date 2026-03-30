@@ -784,6 +784,7 @@ section { padding: 110px 60px; position: relative; }
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .gallery { padding: 30px 12px; }
+  .nav-logo-text { display: none; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 !important; max-width: 100%; }
   .gallery-item { height: 160px; }
   
