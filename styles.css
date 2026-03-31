@@ -760,8 +760,6 @@ section { padding: 110px 60px; position: relative; }
 }
 .cta-banner .btn-primary { position: relative; }
 
-.client-hidden { display: none; }
-.clients-grid.expanded .client-hidden { display: flex; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
