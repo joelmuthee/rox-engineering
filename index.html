@@ -182,10 +182,10 @@
 <section class="clients">
   <div class="section-header reveal">
     <div class="section-label">Trusted By</div>
-    <div class="section-title">Our Clients</div>
+    <div class="section-title">Our Satisfied Clients</div>
     <div class="section-line"></div>
   </div>
-  <div class="clients-grid">
+  <div class="clients-grid reveal">
     <div class="client-cell"><img src="images/clients/huawei_client_roxengineering.png" alt="Huawei" loading="lazy"></div>
     <div class="client-cell"><img src="images/clients/total_energies_client_roxengineering.png" alt="TotalEnergies" loading="lazy"></div>
     <div class="client-cell"><img src="images/clients/basigo-png.webp" alt="BasiGo" loading="lazy"></div>
@@ -194,11 +194,15 @@
     <div class="client-cell"><img src="images/clients/samburu_county_government_client_roxengineering.jpg" alt="Samburu County" loading="lazy"></div>
     <div class="client-cell"><img src="images/clients/adsite_client_roxengineering.png" alt="Adsite" loading="lazy"></div>
     <div class="client-cell"><img src="images/clients/willstone_homes_client_roxengineering.png" alt="Willstone Homes" loading="lazy"></div>
-    <div class="client-cell"><img src="images/clients/Proto_gas_client_roxengineering.png" alt="Proto Gas" loading="lazy"></div>
-    <div class="client-cell"><img src="images/clients/eco_center_client_roxengineering.png" alt="Eco Center" loading="lazy"></div>
-    <div class="client-cell"><img src="images/clients/artspace_client_roxengineering.jpg" alt="Artspace" loading="lazy"></div>
-    <div class="client-cell"><img src="images/clients/samphil_engineering_client_roxengineering.jpg" alt="Samphil" loading="lazy"></div>
-    <div class="client-cell"><img src="images/clients/aalis-architects-ke-logo.webp" alt="Aalis Architects" loading="lazy"></div>
+    <div class="client-cell client-hidden"><img src="images/clients/aalis-architects-ke-logo.webp" alt="Aalis Architects" loading="lazy"></div>
+    <div class="client-cell client-hidden"><img src="images/clients/artspace_client_roxengineering.jpg" alt="Artspace" loading="lazy"></div>
+    <div class="client-cell client-hidden"><img src="images/clients/eco_center_client_roxengineering.png" alt="Eco Center" loading="lazy"></div>
+    <div class="client-cell client-hidden"><img src="images/clients/Proto_gas_client_roxengineering.png" alt="Proto Gas" loading="lazy"></div>
+    <div class="client-cell client-hidden"><img src="images/clients/samphil_engineering_client_roxengineering.jpg" alt="Samphil Engineering" loading="lazy"></div>
+    <div class="client-cell client-hidden"><img src="images/clients/cropped-WhatsApp-Image-2021-07-31-at-2.46.04-PM.jpeg" alt="Client" loading="lazy"></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <button class="btn-primary" id="view-more-clients" onclick="toggleClients()">View More Clients</button>
   </div>
 </section>
 
@@ -405,6 +409,18 @@ function closeLightbox() {
 lbClose.addEventListener('click', closeLightbox);
 lbOverlay.addEventListener('click', (e) => { if (e.target === lbOverlay) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+function toggleClients() {
+  var grid = document.querySelector('.clients-grid');
+  var btn = document.getElementById('view-more-clients');
+  if (grid.classList.contains('expanded')) {
+    grid.classList.remove('expanded');
+    btn.textContent = 'View More Clients';
+  } else {
+    grid.classList.add('expanded');
+    btn.textContent = 'Show Less';
+  }
+}
 </script>
 
 <!-- WhatsApp Chat Widget -->

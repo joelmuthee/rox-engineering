@@ -556,6 +556,8 @@ section { padding: 110px 60px; position: relative; }
   object-fit: contain; opacity: 1; filter: none;
   transition: all 0.3s ease;
 }
+.client-hidden { display: none; }
+.clients-grid.expanded .client-hidden { display: flex; }
 
 /* ===== GOOGLE REVIEWS ===== */
 .reviews-section {
